@@ -11,34 +11,70 @@ import java.util.Scanner;
 
 public class ArrayReader {
     public ArrayList<String> list = new ArrayList<>();
+    public ArrayList<String> name = new ArrayList<>();
+    public ArrayList<String> phone = new ArrayList<>();
     public String str;
+    public String str1;
 
-    public void getReadToFile() {
+
+    public void getReadToFile() { // Читаем файл и делим его на строки и сущности
         try (Scanner scan = new Scanner(new File("book.txt"))) {
             while (scan.hasNextLine()) {
                 list.add(scan.nextLine());
+            }
+            String[] array = list.toArray(new String[0]);
+            for (String str: array ) {
+                String[] data = str.split(" ");
+                if (data.length < 2)
+                    continue;
+                name.add(data[0]);
+                phone.add(data[1]);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public void addString () throws NothingRepeat {
+    public void searchToName() {  // Проверка телефона у фамилии
+        getReadToFile();
+        String[] arrayName = name.toArray(new String[0]);
+        String[] arrayPhone = phone.toArray(new String[0]);
 
-        Scanner scanIn = new Scanner(System.in);
-        System.out.println("Введите Фамилию и номер через пробел: ");
-        str = scanIn.nextLine();
-        list.add(str);
+        Scanner scanInName = new Scanner(System.in);
+        System.out.println("Введите Фамилию для проверки: ");
+        str = scanInName.nextLine();
+        boolean k = false;
+        for (int i = 0; i < arrayName.length ; i++) {   // Проверяем на имеющуюся строку
+            if (str.equals(arrayName[i])) {
+                System.out.println(arrayPhone[i]);
+                k = true;
+            }
+        }
+        if (k == false) {
+            System.out.println("Такого номера/фамилии нет");
+        }
 
     }
 
-    public void validationString () throws NothingRepeat {
+    public void addString () throws NothingRepeat {  // Добавляем данные
+
+        Scanner scanInName = new Scanner(System.in);
+        System.out.println("Введите Фамилию: ");
+        str = scanInName.nextLine();
+
+        Scanner scanInPhone = new Scanner(System.in);
+        System.out.println("Введите номер: ");
+        str1 = scanInPhone.nextLine();
+
+        str = str + " " + str1;
+        list.add(str);
 
         String[] array = list.toArray(new String[0]);
 
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {   // Проверяем на имеющуюся строку
             if (str.equals(array[i])) {
-                throw (new NothingRepeat());
+                String[] data = str.split(" ");
+                throw (new NothingRepeat(data[0],data[1]));
             }
         }
     }
@@ -53,3 +89,4 @@ public class ArrayReader {
     }
 
 }
+
