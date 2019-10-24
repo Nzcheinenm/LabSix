@@ -1,5 +1,11 @@
 package com.company;
 
+/*
+ *
+ * Дочерний класс, который общается с пользователем
+ *
+ */
+
 import java.util.Scanner;
 
 class BookPhoneReader extends ArrayReader{

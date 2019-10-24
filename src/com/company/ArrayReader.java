@@ -9,6 +9,12 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ *
+ * Класс работы с файлом, записью и чтению строк
+ *
+ */
+
 class ArrayReader {
     private String str;
     private ArrayList<String> list = new ArrayList<>();

@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30e9aed-48a6-4007-9be9-db032f79b83c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/book.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabSix/com/company/ArrayReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabSix/com/company/ArrayReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabSix/com/company/BookPhoneReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabSix/com/company/BookPhoneReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabSix/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabSix/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ArrayReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ArrayReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/BookPhoneReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BookPhoneReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/NothingRepeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/NothingRepeat.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
