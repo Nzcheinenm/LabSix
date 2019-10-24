@@ -2,11 +2,12 @@ package com.company;
 
 import java.util.Scanner;
 
-public class BookPhoneReader extends ArrayReader{
-    public void getMain() throws NothingRepeat {
+class BookPhoneReader extends ArrayReader{
+    void getMain() throws NothingRepeat {
         int value;
         Scanner scanInName = new Scanner(System.in);
-        System.out.println("Хотите ввести данные или проверить на наличие? \n Введите для ввода данных 1 или для проверки 2");
+        System.out.println("Хотите ввести данные или проверить на наличие? "
+                +  "\nВведите для ввода данных 1 или для проверки 2");
         value = scanInName.nextInt();
         if (value == 1) {
             getReadToFile();
@@ -17,5 +18,11 @@ public class BookPhoneReader extends ArrayReader{
         } else {
             throw new NothingRepeat();
         }
+    }
+
+    void getNotRead() throws NothingRepeat {
+        getReadToFile();
+        addString();
+        recordToFile();
     }
 }

@@ -9,15 +9,13 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ArrayReader {
-    public ArrayList<String> list = new ArrayList<>();
-    public ArrayList<String> name = new ArrayList<>();
-    public ArrayList<String> phone = new ArrayList<>();
-    public String str;
-    public String str1;
+class ArrayReader {
+    private String str;
+    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<String> name = new ArrayList<>();
+    private ArrayList<String> phone = new ArrayList<>();
 
-
-    public void getReadToFile() { // Читаем файл и делим его на строки и сущности
+    void getReadToFile() { // Читаем файл и делим его на строки и сущности
         try (Scanner scan = new Scanner(new File("book.txt"))) {
             while (scan.hasNextLine()) {
                 list.add(scan.nextLine());
@@ -35,7 +33,7 @@ public class ArrayReader {
         }
     }
 
-    public void searchToName() {  // Проверка телефона у фамилии
+    void searchToName() {  // Проверка телефона у фамилии
         getReadToFile();
         String[] arrayName = name.toArray(new String[0]);
         String[] arrayPhone = phone.toArray(new String[0]);
@@ -50,13 +48,13 @@ public class ArrayReader {
                 k = true;
             }
         }
-        if (k == false) {
+        if (!k) {
             System.out.println("Такого номера/фамилии нет");
         }
 
     }
 
-    public void addString () throws NothingRepeat {  // Добавляем данные
+    void addString() throws NothingRepeat {  // Добавляем данные
 
         Scanner scanInName = new Scanner(System.in);
         System.out.println("Введите Фамилию: ");
@@ -64,7 +62,7 @@ public class ArrayReader {
 
         Scanner scanInPhone = new Scanner(System.in);
         System.out.println("Введите номер: ");
-        str1 = scanInPhone.nextLine();
+        String str1 = scanInPhone.nextLine();
 
         str = str + " " + str1;
         list.add(str);
@@ -79,7 +77,7 @@ public class ArrayReader {
         }
     }
 
-    public void recordToFile() {
+    void recordToFile() {  // Записываем в файл
         try {
             Files.write(Paths.get("book.txt"),list, StandardOpenOption.CREATE);
         } catch (IOException e) {
